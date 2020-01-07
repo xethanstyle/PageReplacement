@@ -47,4 +47,12 @@
 			System.out.println("輸入錯誤，請重新執行程式 ! !");
 	}</code></pre>
  * Method I : LRU_Algorithm (36~91行) LRU演算
- <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
+ <pre><code>public static void LRU_Algorithm(int NumofFrm, String input)</code></pre>
+  <br/>  1.(38~44行):依使用這設定frame數量，初始化frame陣列
+  <pre><code>int NumofInput = input.length();
+		fram frm[] = new fram[NumofFrm];
+		for (int i = 0; i < NumofFrm; i++) {
+			frm[i] = new fram();
+			frm[i].id = i;
+			frm[i].value = ' ';
+		}</code></pre>
