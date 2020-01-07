@@ -48,7 +48,7 @@
 	}</code></pre>
  * Method I : LRU_Algorithm (36~91行) LRU演算
  <pre><code>public static void LRU_Algorithm(int NumofFrm, String input)</code></pre>
- <br/>  1.(38~44行):依使用者設定frame數量，初始化frame陣列
+     <br/>  1.(38~44行):依使用者設定frame數量，初始化frame陣列
   <pre><code>int NumofInput = input.length();
 		fram frm[] = new fram[NumofFrm];
 		for (int i = 0; i < NumofFrm; i++) {
@@ -56,7 +56,19 @@
 			frm[i].id = i;
 			frm[i].value = ' ';
 		}</code></pre>
-<br/>  2.(46~49行):將frame的ID，依Linkedlist的方式排列，保持最進換值的frame ID會在最後一個節點
+    <br/>  2.(46~49行):將frame的ID，依Linkedlist的方式排列，保持最進換值的frame ID會在最後一個節點
 <pre><code>LinkedList list = new LinkedList();
 		for (int i = 0; i < NumofFrm; i++)
 			list.add(i);</code></pre>
+    <br/>  3.(60~71行):檢查目前輸入的序列的值，使否已存在任一frame中，如果是將此frame調至Linkedlist的最後一個節點，表示最近最新剛使用過
+	<pre><code>for (int i = 0; i < NumofInput; i++) {
+			boolean error = true;
+			for (int j = 0; j < NumofFrm; j++) {
+				if (input.charAt(i) == frm[j].value) {
+					int index = list.indexOf(frm[j].id);
+					list.remove(index);
+					list.addLast(frm[j].id);
+					error = false;
+					break;
+				}
+			}</code></pre>
