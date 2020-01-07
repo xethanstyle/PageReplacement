@@ -103,3 +103,24 @@
 			frm[i].next = 0;
 			frm[i].replace = " ";
 		}</code></pre>
+ (111~133行):依分頁序列輸入順序，檢查任一frame是否存在相同內存，如果有，該frame為vitcim，分頁錯誤為flase，並計算未來分頁序列是否有下一個同樣的值，如果有寫入該frame的next，如果沒有，該frame的next為0(即未來沒有參考值)
+<pre><code>for (int i = 0; i < NumofLength; i++) {
+			System.out.println("\n第" + (i + 1) + "次執行，序列為 " + input + "，目前輸入 " + input.charAt(i));
+			int nextVictim = -1;
+			boolean pageerror = true;
+			for (int j = 0; j < NumofFrm; j++) {
+				if (input.charAt(i) == frm[j].value) { // 輸入的值與目前frame的值相同時
+					nextVictim = frm[j].id;
+					frm[nextVictim].replace = "Victim";
+					int index = list.indexOf(frm[j].id);
+					list.remove(index);
+					list.addLast(frm[j].id);
+					input = input.replaceFirst(Character.toString(input.charAt(i)), " ");
+					if (input.contains(Character.toString((frm[j].value)))) {
+						frm[j].next = input.indexOf(frm[j].value) + 1;
+					} else
+						frm[j].next = 0;
+					pageerror = false;
+					break;
+				}
+			}</code></pre>
