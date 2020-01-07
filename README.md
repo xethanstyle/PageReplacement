@@ -10,4 +10,4 @@
  <br/>  4.完成輸入後，按下Enter，系統產生「上述變數輸入確認」提示文字，隨即開始執行運算，畫面參考結果如下: <br>   
 ![image](1.png "執行結果")
 ## 2. 執行結果
-<br/>  1.LRU Page Replacement 
+* LRU Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下
