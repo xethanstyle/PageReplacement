@@ -16,3 +16,4 @@
 * OPT Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
 ![image](4.png "OPT運算結果_1")
 ![image](5.png "OPT運算結果_2")
+![image](6.png "OPT運算結果_3")<>
