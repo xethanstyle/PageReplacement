@@ -7,5 +7,6 @@
  <br/>  1.選擇本次執行分頁替換演算:(1) LRU Page Replacement (2) Optimal Page Replacement ==> 如輸入1，選擇LRU演算
  <br/>  2.輸入頁框(Frame)數量 ==> 輸入本次執行Frame數量，如 3，代表產生3個Frame數量
  <br/>  3.輸入分頁(Page)序列(英文單字) ==> 輸入連續存取分頁序列，以英文字母代表，如輸入"abcdrgbbjavhgabc"進行運算
- <br/>  4.完成輸入後，按下Enter，系統產生 上述變數輸入確認，隨即開始執行運算，參考結果如下:
+ <br/>  4.完成輸入後，按下Enter，系統產生「上述變數輸入確認」提示文字，隨即開始執行運算，畫面參考結果如下:
+ <>
 ![image](1.png "執行結果")
