@@ -175,8 +175,8 @@
 					nextVictim = (int) list.get(candidateVictim);
 					frm[nextVictim].replace = "Victim";
 				}</code></pre>
-(185~193行):確定vitcim位置後，開始替換演算，並更新各frame暫存資料的時間排序，及是否存在下一個參考值
-		<pre><code>frm[nextVictim].value = input.charAt(i); // 確定vitcim位置後，開始替換演算
+				(185~193行):確定vitcim位置後，開始替換演算，並更新各frame暫存資料的時間排序，及是否存在下一個參考值
+				<pre><code>frm[nextVictim].value = input.charAt(i); // 確定vitcim位置後，開始替換演算
 				list.remove(list.indexOf(frm[nextVictim].id)); // 並更新各frame暫存資料的時間排序
 				list.addLast(frm[nextVictim].id);
 				input = input.replaceFirst(Character.toString(input.charAt(i)), " ");
@@ -185,7 +185,7 @@
 				} else
 					frm[nextVictim].next = 0;</code></pre>
 (195~206行):完成替換演算後，進行列印
-<pre><code>System.out.println();
+		<pre><code>System.out.println();
 			for (int j = 0; j < NumofFrm; j++)
 				System.out.print("\t" + frm[j].replace + "\t\t\t|");
 			System.out.println();
