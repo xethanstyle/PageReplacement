@@ -183,10 +183,9 @@
 				if (input.contains(Character.toString(frm[nextVictim].value))) {
 					frm[nextVictim].next = input.indexOf(frm[nextVictim].value) + 1;
 				} else
-					frm[nextVictim].next = 0;
-			}</code></pre>
+					frm[nextVictim].next = 0;</code></pre>
 (195~206行):完成替換演算後，進行列印
-	<pre><code>System.out.println();
+<pre><code>System.out.println();
 			for (int j = 0; j < NumofFrm; j++)
 				System.out.print("\t" + frm[j].replace + "\t\t\t|");
 			System.out.println();
