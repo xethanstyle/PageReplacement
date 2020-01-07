@@ -11,4 +11,5 @@
 ![image](1.png "執行結果")
 ## 2. 執行結果
 * LRU Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
-![image](2.png "LRU運算結果_1")
+![image](2.png "LRU運算結果_1")<br>
+![image](3.png "LRU運算結果_2")<br>
