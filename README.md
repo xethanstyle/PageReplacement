@@ -16,4 +16,12 @@
 * OPT Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
 ![image](4.png "OPT運算結果_1")
 ![image](5.png "OPT運算結果_2")
-![image](6.png "OPT運算結果_3")<>
+![image](6.png "OPT運算結果_3")
+## 3. 程式說明
+ * 程式5~10行:設定一個Fram的類別，代表Frame，內含識別號(id)、下一個參考值位置(next)、內存(value)及是否為victim(replace)。
+  <pre><code>class fram {
+	int id;
+	int next;
+	char value;
+	String replace;
+}</code></pre>
