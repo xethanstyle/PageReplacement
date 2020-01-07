@@ -163,7 +163,6 @@
 					}
 					frm[nextVictim].replace = "Victim";
 				}
-
 				else if (count > 1) { // 表示有二個以上frame無參考值
 					for (int j = 0; j < NumofFrm; j++) {
 						if (frm[j].next == 0) {
@@ -171,12 +170,11 @@
 								candidateVictim = list.indexOf(frm[j].id);
 						}
 					}
-
 					nextVictim = (int) list.get(candidateVictim);
 					frm[nextVictim].replace = "Victim";
 				}</code></pre>
-				(185~193行):確定vitcim位置後，開始替換演算，並更新各frame暫存資料的時間排序，及是否存在下一個參考值
-				<pre><code>frm[nextVictim].value = input.charAt(i); // 確定vitcim位置後，開始替換演算
+(185~193行):確定vitcim位置後，開始替換演算，並更新各frame暫存資料的時間排序，及是否存在下一個參考值
+<pre><code>frm[nextVictim].value = input.charAt(i); // 確定vitcim位置後，開始替換演算
 				list.remove(list.indexOf(frm[nextVictim].id)); // 並更新各frame暫存資料的時間排序
 				list.addLast(frm[nextVictim].id);
 				input = input.replaceFirst(Character.toString(input.charAt(i)), " ");
