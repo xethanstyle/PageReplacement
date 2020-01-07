@@ -56,3 +56,7 @@
 			frm[i].id = i;
 			frm[i].value = ' ';
 		}</code></pre>
+<br/>  2.(46~49行):將frame的ID，依Linkedlist的方式排列，保持最進換值的frame ID會在最後一個節點
+<pre><code>LinkedList list = new LinkedList();
+		for (int i = 0; i < NumofFrm; i++)
+			list.add(i);</code></pre>
