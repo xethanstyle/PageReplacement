@@ -90,7 +90,7 @@
 		}</code></pre>
  * Method II : Optimal_Algorithm (93~208行) OPT演算
  <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
- (98~109行):依使用者設定之frame數量，進行初始化
+ 1.  (98~109行):依使用者設定之frame數量，進行初始化
 <pre><code>LinkedList list = new LinkedList();
 		for (int i = 0; i < NumofFrm; i++)
 			list.add(i);
@@ -143,9 +143,9 @@
 						count++;
 				}</code></pre>
 1.  (155~183行):依上述取得的資料，計算下一個vitcim時哪一個frame，有3種可能需判斷，
-- 每個frame都有下一個參考值:victim由每個frame的參考值距離來決定，最遠即victim
-- 只有一個frame無下一個參考值:該frame即為victim
-- 有兩個以上frame無參考值:frame存在最久的即為victim，由Linkedlist狀態決定
+-   每個frame都有下一個參考值:victim由每個frame的參考值距離來決定，最遠即victim
+-   只有一個frame無下一個參考值:該frame即為victim
+-   有兩個以上frame無參考值:frame存在最久的即為victim，由Linkedlist狀態決定
 <pre><code>if ((isHasNext > 0) && count == 0) { // 表示每個frame都有下一個參考值
 					for (int j = 0; j < NumofFrm; j++) {
 						if (frm[j].next > whoisBigNext) {
