@@ -27,10 +27,8 @@
 }</code></pre>
  * 程式12~34行:為主程式，負責設定使用者提供之初始變數，如選擇替換演算法、頁框數量等，完成後將上述變數，如果選擇LRU演算，執行程式28行，如果選擇OPT演算，執行程式30行，否則跳出 "輸入錯誤，請重新執行程式 ! !" 提示。
 <pre><code>public class PageReplacement {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
 		Scanner sc = new Scanner(System.in);
 		System.out.print("請選擇執行分頁替換演算:(1) LRU Page Replacement (2) Optimal Page Replacement ");
 		int choose = sc.nextInt();
@@ -47,5 +45,6 @@
 			Optimal_Algorithm(NumofFrame, Input);
 		else
 			System.out.println("輸入錯誤，請重新執行程式 ! !");
-
 	}</code></pre>
+ * Method I : LRU_Algorithm (36~91行) LRU演算
+ <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
