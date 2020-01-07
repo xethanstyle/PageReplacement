@@ -74,7 +74,17 @@
 			}</code></pre>
 (73~77行):表示目前輸入的序列的值，不存在任一frame中，目前Linkedlist狀態的第一個節點，即最久未使用過的frame，將此內存進行替換，完成後，再將此frame調至Linkedlist狀態的最後一個節點，表示剛替換過，為最近最新使用
 <pre><code>if (error) {
-			frm[(int) list.getFirst()].value = input.charAt(i);
-			list.addLast((int) list.getFirst());
-			list.remove(0);
-	}</code></pre>
+				frm[(int) list.getFirst()].value = input.charAt(i);
+				list.addLast((int) list.getFirst());
+				list.remove(0);
+			}</code></pre>
+(81~89行):將運算結果進行列印
+	<pre><code>System.out.println("第" + (i + 1) + "運算(page='" + input.charAt(i) + "')");
+			for (int j = 0; j < NumofFrm; j++)
+				System.out.print("\tFrame " + j + "   內 存:\t " + frm[j].value + "\t" + "|");
+			System.out.println();
+			for (int j = 0; j < NumofFrm; j++)
+				System.out.print("\t\t排 序:\t " + list.indexOf(frm[j].id) + "\t" + "|");
+			System.out.println(
+					"\n-------------------------------------------------------");
+		}</code></pre>
