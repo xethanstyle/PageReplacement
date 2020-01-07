@@ -88,3 +88,5 @@
 			System.out.println(
 					"\n-------------------------------------------------------");
 		}</code></pre>
+ * Method II : Optimal_Algorithm (93~208行) OPT演算
+ <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
