@@ -124,3 +124,54 @@
 					break;
 				}
 			}</code></pre>
+(135~151行):如果沒有任一frame內存與目前輸入分頁序列的值相同，即發生分頁錯誤(pageerror為true)，開始檢查各frame是否已有內存或是完全沒有，如果已有內存，計算各frame的下個參考值的距離，最遠的即為victim
+<pre><code>if (pageerror) {
+				int isHasNext = -1; // 檢查各frame目前的值有沒有下一個參考值，預設值-1
+				int whoisBigNext = 0; // 檢查各frame，如果有參考值，誰的參考值最遠
+				int count = 0; // 計算有幾個frame的參考值為0(即沒有任何參考，可立即列入替換)
+
+				int candidateVictim = 9999;
+				for (int j = 0; j < NumofFrm; j++) { // 檢查各frame有沒有值
+					if (frm[j].value != ' ') {
+						break;
+					}
+				}
+				for (int j = 0; j < NumofFrm; j++) { // 檢查isHasNext的值大小
+					if (frm[j].next > isHasNext)
+						isHasNext = frm[j].next;
+					if (frm[j].next == 0)
+						count++;
+				}</code></pre>
+(155~183行):依上述取得的資料，計算下一個vitcim時哪一個frame，有3種可能需判斷，
+- 【I.每個frame都有下一個參考值】、
+- 【II.只有一個frame無下一個參考值】(該frame即為victim)及
+- 【III.有兩個以上】
+				<pre><code>if ((isHasNext > 0) && count == 0) { // 表示每個frame都有下一個參考值
+					for (int j = 0; j < NumofFrm; j++) {
+						if (frm[j].next > whoisBigNext) {
+							whoisBigNext = frm[j].next;
+							nextVictim = frm[j].id;
+						}
+					}
+					frm[nextVictim].replace = "Victim";
+				} else if ((isHasNext > 0) && count == 1) { // 表示只有一個frame無參考值
+					for (int j = 0; j < NumofFrm; j++) {
+						if (frm[j].next == 0) {
+							nextVictim = frm[j].id;
+							break;
+						}
+					}
+					frm[nextVictim].replace = "Victim";
+				}
+
+				else if (count > 1) { // 表示有二個以上frame無參考值
+					for (int j = 0; j < NumofFrm; j++) {
+						if (frm[j].next == 0) {
+							if (candidateVictim > list.indexOf(frm[j].id))
+								candidateVictim = list.indexOf(frm[j].id);
+						}
+					}
+
+					nextVictim = (int) list.get(candidateVictim);
+					frm[nextVictim].replace = "Victim";
+				}</code></pre>
