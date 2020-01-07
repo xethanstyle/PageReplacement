@@ -61,7 +61,7 @@
 		for (int i = 0; i < NumofFrm; i++)
 			list.add(i);</code></pre>
 <br/>  3.(60~71行):檢查目前輸入的序列的值，使否已存在任一frame中，如果是將此frame調至Linkedlist的最後一個節點，表示最近最新剛使用過
-	<pre><code>for (int i = 0; i < NumofInput; i++) {
+<pre><code>for (int i = 0; i < NumofInput; i++) {
 			boolean error = true;
 			for (int j = 0; j < NumofFrm; j++) {
 				if (input.charAt(i) == frm[j].value) {
@@ -73,7 +73,7 @@
 				}
 			}</code></pre>
 <br/>  4.(73~77行):表示目前輸入的序列的值，不存在任一frame中，目前Linkedlist狀態的第一個節點，即最久未使用過的frame，將此內存進行替換，完成後，再將此frame調至Linkedlist狀態的最後一個節點，表示剛替換過，為最近最新使用
-	<pre><code>if (error) {
+<pre><code>if (error) {
 				frm[(int) list.getFirst()].value = input.charAt(i);
 				list.addLast((int) list.getFirst());
 				list.remove(0);
