@@ -90,3 +90,16 @@
 		}</code></pre>
  * Method II : Optimal_Algorithm (93~208行) OPT演算
  <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
+ (98~109行):依使用者設定之frame數量，進行初始化
+<pre><code>LinkedList list = new LinkedList();
+		for (int i = 0; i < NumofFrm; i++)
+			list.add(i);
+
+		fram frm[] = new fram[NumofFrm];
+		for (int i = 0; i < NumofFrm; i++) {
+			frm[i] = new fram();
+			frm[i].id = i;
+			frm[i].value = ' ';
+			frm[i].next = 0;
+			frm[i].replace = " ";
+		}</code></pre>
