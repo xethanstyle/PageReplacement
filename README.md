@@ -142,7 +142,7 @@
 					if (frm[j].next == 0)
 						count++;
 				}</code></pre>
-(155~183行):依上述取得的資料，計算下一個vitcim時哪一個frame，有3種可能需判斷，
+(155~183行):依上述取得的資料，計算下一個vitcim時哪一個frame，有3種可能需判斷
 1.  每個frame都有下一個參考值:victim由每個frame的參考值距離來決定，最遠即victim
 2.  只有一個frame無下一個參考值:該frame即為victim
 3.  有兩個以上frame無參考值:frame存在最久的即為victim，由Linkedlist狀態決定
@@ -175,3 +175,26 @@
 					nextVictim = (int) list.get(candidateVictim);
 					frm[nextVictim].replace = "Victim";
 				}</code></pre>
+(185~193行):確定vitcim位置後，開始替換演算，並更新各frame暫存資料的時間排序，及是否存在下一個參考值
+<pre><code>frm[nextVictim].value = input.charAt(i); // 確定vitcim位置後，開始替換演算
+				list.remove(list.indexOf(frm[nextVictim].id)); // 並更新各frame暫存資料的時間排序
+				list.addLast(frm[nextVictim].id);
+				input = input.replaceFirst(Character.toString(input.charAt(i)), " ");
+				if (input.contains(Character.toString(frm[nextVictim].value))) {
+					frm[nextVictim].next = input.indexOf(frm[nextVictim].value) + 1;
+				} else
+					frm[nextVictim].next = 0;
+			}</code></pre>
+(195~206行):完成替換演算後，進行列印
+<pre><code>System.out.println();
+			for (int j = 0; j < NumofFrm; j++)
+				System.out.print("\t" + frm[j].replace + "\t\t\t|");
+			System.out.println();
+			for (int j = 0; j < NumofFrm; j++)
+				System.out.print("\tFrame " + frm[j].id + "  內存:\t " + frm[j].value + "\t|");
+			System.out.println();
+			for (int j = 0; j < NumofFrm; j++)
+				System.out.print("\t下一個參考值位置:   " + frm[j].next + "\t|");
+			for (int j = 0; j < NumofFrm; j++)
+				frm[j].replace = " ";
+			System.out.println();</code></pre>
