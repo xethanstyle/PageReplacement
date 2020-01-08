@@ -46,7 +46,7 @@
 		else
 			System.out.println("輸入錯誤，請重新執行程式 ! !");
 	}</code></pre>
- * Method I : LRU_Algorithm (36~91行) LRU演算
+ * ## Method I : LRU_Algorithm (36~91行) LRU演算
 <pre><code>public static void LRU_Algorithm(int NumofFrm, String input)</code></pre>
 (38~44行):依使用者設定frame數量，初始化frame陣列
  <pre><code>int NumofInput = input.length();
@@ -88,7 +88,7 @@
 			System.out.println(
 					"\n-------------------------------------------------------");
 		}</code></pre>
- * Method II : Optimal_Algorithm (93~208行) OPT演算
+ * ## Method II : Optimal_Algorithm (93~208行) OPT演算
  <pre><code>public static void Optimal_Algorithm(int NumofFrm, String input)</code></pre>
  1.  (98~109行):依使用者設定之frame數量，進行初始化
 <pre><code>LinkedList list = new LinkedList();
@@ -142,7 +142,7 @@
 					if (frm[j].next == 0)
 						count++;
 				}</code></pre>
-(155~183行):依上述取得的資料，計算下一個vitcim時哪一個frame，有3種可能需判斷
+(155~183行):依上述取得的資料，計算下一個vitcim會是哪一個frame，有3種可能需判斷
 1.  每個frame都有下一個參考值:victim由每個frame的參考值距離來決定，最遠即victim
 2.  只有一個frame無下一個參考值:該frame即為victim
 3.  有兩個以上frame無參考值:frame存在最久的即為victim，由Linkedlist狀態決定
