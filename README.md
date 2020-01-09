@@ -11,10 +11,10 @@
  <br/>  4.完成輸入後，按下Enter，系統產生「上述變數輸入確認」提示文字，隨即開始執行運算，畫面參考結果如下: <br>   
 ![image](1.png "執行結果")
 ## 2. 執行結果
-* LRU Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
+* LRU Page Replacement : 依上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
 ![image](2.png "LRU運算結果_1")
 ![image](3.png "LRU運算結果_2")<br>
-* OPT Page Replacement : 以上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
+* OPT Page Replacement : 依上例，設定3個 Frame，輸入16個分頁序列 (abcdrgbbjavhgabc)，執行結果如下<br>  
 ![image](4.png "OPT運算結果_1")
 ![image](5.png "OPT運算結果_2")
 ![image](6.png "OPT運算結果_3")
